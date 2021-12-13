@@ -1,0 +1,12 @@
+version: '3'
+services:
+  proxy:
+    image: "apache/shardingsphere-proxy:latest"
+    container_name: sharding-sphere-proxy
+    ports:
+      - "3307:3307"
+    volumes:
+      - ./conf/:/opt/shardingsphere-proxy/conf
+      - ./lib/:/opt/shardingsphere-proxy/ext-lib
+
+# docker run -d -v /${your_work_dir}/conf:/opt/shardingsphere-proxy/conf -e PORT=3308 -p13308:3308 apache/shardingsphere-proxy:latest
